@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -14,6 +15,7 @@ public class Transportadora {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotEmpty(message = "campo de email obrigatorio")
+	@Email(message = "campo de email invalido")
 	private String email;
 	@NotEmpty(message = "campo de nome obrigatorio")
 	@Size(min = 4,message = "campo nao deve conter menos de 4 caracteres")
