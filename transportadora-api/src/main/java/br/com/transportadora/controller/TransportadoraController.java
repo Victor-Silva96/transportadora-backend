@@ -70,9 +70,9 @@ public class TransportadoraController {
 				
 	}
 	
-	@DeleteMapping
-	public void deletar (@RequestBody Transportadora transportadora) {
-		transportadoras.delete(transportadora);
+	@DeleteMapping("/{id}")
+	public void deletar (@PathVariable Long id) {
+		transportadoras.deleteById(id);
 	}
 
 }
